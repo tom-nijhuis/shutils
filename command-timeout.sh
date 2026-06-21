@@ -30,9 +30,9 @@ if [ "$ELAPSED" -ge "$TIMEOUT_SECONDS" ] || [ ! -f "$LOCK_FILE" ]; then
   mkdir -p /tmp/timeout
   rm -f "$LOCK_FILE"
   {
-    printf 'Command: %s\n' "$COMMAND_TO_RUN"
-    printf 'Timeout (s): %s\n' "$TIMEOUT_SECONDS"
-    printf 'Last run: %s\n' "$CURRENT_TIME_HR"
+    printf 'Command     : %s\n' "$COMMAND_TO_RUN"
+    printf 'Timeout (s) : %s\n' "$TIMEOUT_SECONDS"
+    printf 'Last run    : %s\n' "$CURRENT_TIME_HR"
     printf 'Locked until: %s\n' "$NEXT_RUN_HR"
   } >"$LOCK_FILE"
 else
